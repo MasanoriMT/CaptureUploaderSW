@@ -1,0 +1,6 @@
+github "Alamofire/Alamofire"
+github "questbeat/QBImagePicker"
+github "michaeltyson/TPKeyboardAvoiding"
+github "ZipArchive/ZipArchive"
+github "SVProgressHUD/SVProgressHUD"
+github "AliSoftware/OHHTTPStubs"

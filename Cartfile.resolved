@@ -1,0 +1,6 @@
+github "Alamofire/Alamofire" "4.5.1"
+github "AliSoftware/OHHTTPStubs" "6.0.0"
+github "SVProgressHUD/SVProgressHUD" "2.2.1"
+github "ZipArchive/ZipArchive" "v2.0.7"
+github "michaeltyson/TPKeyboardAvoiding" "1.3.1"
+github "questbeat/QBImagePicker" "3.4.0"

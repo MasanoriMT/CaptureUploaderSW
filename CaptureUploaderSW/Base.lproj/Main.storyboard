@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Capture Uploader View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CaptureUploaderViewController" customModule="CaptureUploaderSW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbX-AJ-wsC" customClass="TPKeyboardAvoidingScrollView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYp-4D-pBZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="capture"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="KQF-jL-CiJ"/>
+                                            <constraint firstAttribute="height" constant="100" id="wde-iu-Esc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="キャプチャー選択"/>
+                                        <connections>
+                                            <action selector="selectCapture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5gY-Th-F8a"/>
+                                            <outletCollection property="gestureRecognizers" destination="KSE-HK-P54" appends="YES" id="xnN-ZO-6uO"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="アップロード先URL" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YbB-ci-mWQ">
+                                        <rect key="frame" x="0.0" y="100" width="200" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="urltext"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="4ud-xk-g5Z"/>
+                                            <constraint firstAttribute="height" constant="100" id="VOT-Cu-hEa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="uploadUrlDidEndOnExit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="DsA-zv-NWG"/>
+                                            <action selector="uploadUrlEditingDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="fYG-Gy-8j0"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ne-a6-tgo">
+                                        <rect key="frame" x="0.0" y="200" width="200" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="upload"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="08K-I1-VkQ"/>
+                                            <constraint firstAttribute="width" constant="200" id="LRk-XY-6BN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="アップロード"/>
+                                        <connections>
+                                            <action selector="uploadButtonDidTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ImM-O4-Dy5"/>
+                                            <outletCollection property="gestureRecognizers" destination="vRi-oW-Hcf" appends="YES" id="4W7-Qx-ubk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8Ne-a6-tgo" firstAttribute="top" secondItem="YbB-ci-mWQ" secondAttribute="bottom" id="H1w-5N-YF6"/>
+                                    <constraint firstItem="pYp-4D-pBZ" firstAttribute="leading" secondItem="GbX-AJ-wsC" secondAttribute="leading" id="QpB-h6-pjh"/>
+                                    <constraint firstItem="pYp-4D-pBZ" firstAttribute="top" secondItem="GbX-AJ-wsC" secondAttribute="top" id="RX9-sT-GF5"/>
+                                    <constraint firstItem="YbB-ci-mWQ" firstAttribute="leading" secondItem="GbX-AJ-wsC" secondAttribute="leading" id="d4A-Jp-f8Y"/>
+                                    <constraint firstItem="YbB-ci-mWQ" firstAttribute="top" secondItem="pYp-4D-pBZ" secondAttribute="bottom" id="gs5-7p-Lsu"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="8Ne-a6-tgo" secondAttribute="bottom" id="hHZ-z2-l9d"/>
+                                    <constraint firstItem="8Ne-a6-tgo" firstAttribute="leading" secondItem="GbX-AJ-wsC" secondAttribute="leading" id="k53-sp-Oks"/>
+                                    <constraint firstAttribute="trailing" secondItem="pYp-4D-pBZ" secondAttribute="trailing" id="z7Y-q6-xR5"/>
+                                </constraints>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtK-5i-12C">
+                                <rect key="frame" x="308" y="743.66666666666652" width="41" height="14.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GbX-AJ-wsC" firstAttribute="top" secondItem="YwK-x5-NZn" secondAttribute="top" id="LRv-Gb-dNb"/>
+                            <constraint firstItem="YwK-x5-NZn" firstAttribute="bottom" secondItem="HtK-5i-12C" secondAttribute="bottom" constant="20" id="TRb-hN-qE1"/>
+                            <constraint firstItem="YwK-x5-NZn" firstAttribute="trailing" secondItem="GbX-AJ-wsC" secondAttribute="trailing" id="Uo3-Xd-IF7"/>
+                            <constraint firstItem="YwK-x5-NZn" firstAttribute="bottom" secondItem="GbX-AJ-wsC" secondAttribute="bottom" id="XY9-mB-mHe"/>
+                            <constraint firstItem="HtK-5i-12C" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pSH-IH-am4"/>
+                            <constraint firstItem="GbX-AJ-wsC" firstAttribute="leading" secondItem="YwK-x5-NZn" secondAttribute="leading" id="rtl-kg-nDM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HtK-5i-12C" secondAttribute="trailing" constant="10" id="t9a-bH-UH1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YwK-x5-NZn"/>
+                    </view>
+                    <connections>
+                        <outlet property="captureHeightConstraint" destination="wde-iu-Esc" id="fVN-To-UUw"/>
+                        <outlet property="captureWidthConstraint" destination="KQF-jL-CiJ" id="Gek-7m-FkR"/>
+                        <outlet property="scrollView" destination="GbX-AJ-wsC" id="EZ0-3m-DhQ"/>
+                        <outlet property="uploadHeightConstraint" destination="08K-I1-VkQ" id="SBL-Qr-wSQ"/>
+                        <outlet property="uploadUrlText" destination="YbB-ci-mWQ" id="C3R-gc-tcX"/>
+                        <outlet property="uploadWidthConstraint" destination="LRk-XY-6BN" id="1dD-Fr-86C"/>
+                        <outlet property="urlHeightConstraint" destination="VOT-Cu-hEa" id="Or4-yT-AWB"/>
+                        <outlet property="urlWidthConstraint" destination="4ud-xk-g5Z" id="aw5-1a-DXZ"/>
+                        <outlet property="versionLabel" destination="HtK-5i-12C" id="1wI-1Y-sS4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="KSE-HK-P54">
+                    <connections>
+                        <action selector="tap:" destination="BYZ-38-t0r" id="P4r-Xx-ujz"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="5WL-Kt-vRI"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="vRi-oW-Hcf">
+                    <connections>
+                        <action selector="tap:" destination="BYZ-38-t0r" id="LPV-69-GRt"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="CgK-Xt-JPX"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+</document>

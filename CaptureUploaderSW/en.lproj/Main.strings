@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "アップロード"; ObjectID = "8Ne-a6-tgo"; */
+"8Ne-a6-tgo.normalTitle" = "Upload";
+
+/* Class = "UITextField"; placeholder = "アップロード先URL"; ObjectID = "YbB-ci-mWQ"; */
+"YbB-ci-mWQ.placeholder" = "Input url...";
+
+/* Class = "UIButton"; normalTitle = "キャプチャー選択"; ObjectID = "pYp-4D-pBZ"; */
+"pYp-4D-pBZ.normalTitle" = "Select capture";
